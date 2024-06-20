@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYM'S SAFARIS</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script> 
+      /* paste this line in verbatim */
+      window.formbutton =
+        window.formbutton ||
+        function () {
+          (formbutton.q = formbutton.q || []).push(arguments);
+        };
+      /* customize formbutton below*/
+      formbutton("create", {
+        action: "https://formspree.io/f/mqkrrllr",
+        title: "How can we help?",
+        fields: [
+          {
+            type: "email",
+            label: "Email:",
+            name: "email",
+            required: true,
+            placeholder: "your@email.com",
+          },
+          {
+            type: "textarea",
+            label: "Message:",
+            name: "message",
+            placeholder: "What's on your mind?",
+          },
+          { type: "submit" },
+        ],
+        styles: {
+          title: {
+            backgroundColor: "gray",
+          },
+          button: {
+            backgroundColor: "gray",
+          },
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <section class="navigation">
+      <h1 class="logo" >
+        <img src="kym.jpg" alt="" width="50" height="50">
+      </h1>
+
+      <div class="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="">Services</a>
+        <a href="">Contact Us</a>
+        <button>Sign Up</button>
+      </div>
+    </section>
+    <section class="hero">
+      <img src="Tourism-Africa.jpg" alt="" />
+      <div class="hero-content">
+        <h1>Welcome to Kym Safaris for the best tours and travels.</h1>
+        <p>For The Best Experiences Ever.</p>
+        <button>Call Us</button>
+      </div>
+    </section>
+
+    <section class="search">
+      <input type="search" placeholder="Search Places" name="" id="" />
+      <button>Search Places</button>
+    </section>
+    <section class="destination">
+      <h1>Top Destination</h1>
+
+      <div class="row">
+        <div class="column">
+          <img src="view1.jpeg" alt="" />
+          <img src="tourism.webp" alt="" />
+        </div>
+        <div class="column">
+          <img src="view2.jpeg" alt="" />
+          <img src="Tourism-Africa.jpg" alt="" />
+        </div>
+        <div class="column">
+          <img src="site1.webp" alt="" />
+          <img src="gears.jpeg" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+  <footer>Try Kym Safaris for best tours today .... &copy;kym_safaris</footer>
+</html>

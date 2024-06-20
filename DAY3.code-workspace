@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../DAY3"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "KymSafaris"
+	}
+}
