@@ -76,6 +76,13 @@ body {
   text-decoration: none;
   margin: 16px;
 }
+.hero-about img{
+  max-width: 100%;
+  width: 85%;
+  margin: auto;
+  object-fit: cover;
+  display: block;
+}
 .hero {
     width: 100%;
     height: 100vh;
@@ -127,7 +134,12 @@ body {
     font-size: 10px;
     text-align: center;
   }
-
+  .Kim h1{
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+      text-align: center;
+      color: white;
+  }
   h1 {
     font-size: 30px;
     font-family: "Times New Roman", Times, serif;
@@ -151,4 +163,34 @@ body {
   img{
     max-width: 100%;
     height: auto;
+  }
+  .mission{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-height: fit-content;
+    margin: auto;
+    margin-top: 4rem;
+}
+.reject{
+   background-color: #050e31;
+   width: 25%;
+   padding: 15px;
+   border-radius: 15px;
+}
+.Team{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-height: fit-content;
+  margin: auto;
+  margin-top: 4rem;
+}
+.reject2{
+    background-color: #0e1946;
+    width: 25%;
+    padding: 20px;
+    border-radius: 15px;
   }
