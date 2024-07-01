@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./contacts.css" />
+</head>
+<body>
+     <section class="navigation">
+      <h1 class="logo"><img src="kym.jpg" alt="" width="50" height="50" /></h1>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="">Services</a>
+        <a href="contacts.html">Contact Us</a>
+      </div>
+    <h1>Contact Us</h1>
+    <form action="/submit_contact_form" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+
+</body>
+</html>
