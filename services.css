@@ -5,11 +5,27 @@ body {
     margin: 0;
     padding: 0;
 }
+.navlinks {
+    color: white;
+}
+
+.navlinks > a {
+    color: white;
+    text-decoration: none;
+    margin: 16px;}
+
+.navigation {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
 
 .header {
-    background-color: #4CAF50;
     color: white;
-    padding: 20px;
     text-align: center;
 }
 

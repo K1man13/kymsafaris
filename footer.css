@@ -1,0 +1,10 @@
+footer{
+    width: 70%;
+    margin: auto;
+    color: white;
+    margin-top: 3rem;
+}
+.footer-section{
+    display: flex;
+    justify-content: space-between;
+}
