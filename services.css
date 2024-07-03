@@ -28,30 +28,80 @@ body {
     color: white;
     text-align: center;
 }
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.service {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.service h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-.service p {
-    color: #666;
-}
-
-.service img {
-    max-width: 100%;
+/* Main content styles */
+main {
+    padding: 2rem;
+  }
+  
+  /* Booking cards section */
+  .booking-cards {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  /* Individual card styles */
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card > img {
+    width: 100%;
     height: auto;
-}
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-content h2 {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .card-content > p {
+    margin: 8px 0;
+    font-size: 18px;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .card-content > button{
+    margin: 8px 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    background-color: #850885;
+    cursor: pointer;
+    border-radius: 9999px;
+  }
+  .card-content > button:hover{
+    background-color: #a52;
+  }
+  footer{
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  .footer-1 > h1{
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+  }

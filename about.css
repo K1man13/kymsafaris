@@ -40,7 +40,6 @@ body {
   footer{
     padding: 10px;
     text-align: center;
-    background: #35424a;
     color: #ffffff;
     margin-top: 20px;
   }
@@ -59,7 +58,7 @@ body {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  /* flex: ; */
+ 
 }
 
 .logo {
