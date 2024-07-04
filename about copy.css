@@ -1,0 +1,154 @@
+body {
+    background-color: #060b1f;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+  }
+  .logo{
+    color: white;
+  }
+  header{
+    background: #060b1f;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: #e8491d 3px solid;
+  }
+  header h1{
+    margin: 0;
+    font-size: 2cm;
+  }
+  main{
+    padding: 20px;
+    background: #ffffff;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  section{
+    margin-bottom: 20px;
+  }
+  section h2{
+    border-bottom: 2px solid #e8491d;
+    padding-bottom: 10px;
+  }
+  .team div{
+    margin-bottom: 20px;
+  }
+  footer{
+    padding: 10px;
+    text-align: center;
+    background: #35424a;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  a{
+    color: #e8491d;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+ 
+.navigation {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  /* flex: ; */
+}
+
+.logo {
+  width: 50;
+  height: 50;
+}
+
+.navlinks {
+  color: white;
+}
+
+.navlinks > a {
+  color: white;
+  text-decoration: none;
+  margin: 16px;
+}
+.hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  } */
+  .hero img {
+    max-width: 100%;
+    width: 85%;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f809f8;
+    font-size: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .hero-content h1 {
+    font-size: 30px;
+    margin: 0%;
+  }
+  .hero-content p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    color: rgb(23, 147, 156);
+  }
+  .hero-content button {
+    margin: 8px;
+    font-size: 15px;
+    padding: 12px, 24px;
+    border-radius: 9%;
+    color: white;
+    background-color: #850885;
+  }
+  .hero-content button:hover {
+    background-color: teal;
+  }
+  footer {
+    position: relative;
+    bottom: 0.5%;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  .column {
+ 
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  .column > img {
+    margin-top: 8px;
+    width: 100%;
+    vertical-align: middle;
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+  }
