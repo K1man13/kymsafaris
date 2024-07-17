@@ -1,4 +1,18 @@
-body {
+
+.navlinks > a {
+  color: white;
+  text-decoration: none;
+  margin: 16px;}
+
+.navigation {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+}body {
   background-color: #060b1f;
 }
 

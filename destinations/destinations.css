@@ -1,0 +1,67 @@
+.places {
+    padding: 2em;
+    text-align: center;
+}
+
+h2{
+    color: white;
+}
+.section-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.place-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 1em;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-content {
+    padding: 1em;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.card-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.btn {
+    background-color: #008080;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #005959;
+}
