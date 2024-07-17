@@ -23,24 +23,27 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-const submitButton = document.getElementById("submit");
+const main = document.getElementById("main");
+const returnBtn = document.getElementById("return-btn");
+
 
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const main = document.getElementById("main");
-const createacct = document.getElementById("create-acct");
+const submitButton = document.getElementById("submit");
+const signupButton = document.getElementById("sign-up");
+
 
 const signupEmailIn = document.getElementById("email-signup");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
 const signupPasswordIn = document.getElementById("password-signup");
 const confirmSignUpPasswordIn = document.getElementById(
-  "confirm-password-signup"
+    "confirm-password-signup"
 );
+
+const createacct = document.getElementById("create-acct");
 
 // Start with this
 const createacctbtn = document.getElementById("create-acct-btn");
-const returnBtn = document.getElementById("return-btn");
-const signupButton = document.getElementById("sign-up");
 
 var email,
   password,
