@@ -65,3 +65,42 @@ h2{
 .btn:hover {
     background-color: #005959;
 }
+.booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.booking-form button {
+    align-self: flex-start;
+}
+
+.back-btn {
+    background-color: #ccc;
+    color: #333;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+.back-btn:hover {
+    background-color: #aaa;
+}

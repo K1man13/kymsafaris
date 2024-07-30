@@ -91,9 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     // Update the button attributes
-    paymentButton.dataset.amount = 10; // Replace with actual amount based on bookingDetails
+    paymentButton.dataset.amount = 1000; // Replace with actual amount based on bookingDetails
     paymentButton.dataset.currency = "KES";
   
     // Simulate button click
     paymentButton.click();
-  }x
+  }
