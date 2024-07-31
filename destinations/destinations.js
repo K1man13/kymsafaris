@@ -108,5 +108,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ..then((result) => {
     console.log("Booking saved successfully");
   }).catch((err) => {
-    console.error("Error saving booking" error);
+    console.error("Error saving booking"error);
   });
