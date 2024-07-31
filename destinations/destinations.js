@@ -97,3 +97,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Simulate button click
     paymentButton.click();
   }
+
+  function saveBookingToFirebase(bookingDetails) {
+    const userId = "Z0NWniwBIhSo8epDyIrGtjIXSK53";
+    const dbRef = ref(database, "bookings/" + userId);
+    set(dbRef,{
+      ...bookingDetails,
+    })
+  }
+  ..then((result) => {
+    console.log("Booking saved successfully");
+  }).catch((err) => {
+    console.error("Error saving booking" error);
+  });
