@@ -1,3 +1,42 @@
+body{
+    background-color: #060b1f;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+a:hover {
+    text-decoration: underline;
+  }
+  
+  .navigation {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navlinks {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navlinks > a {
+    color: rgb(14, 13, 13);
+    text-decoration: none;
+    margin: 16px;
+  }
+  
 .places {
     padding: 2em;
     text-align: center;
@@ -103,4 +142,66 @@ h2{
 
 .back-btn:hover {
     background-color: #aaa;
+}
+
+/* Booking page styles */
+.booking-page {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #060b1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.booking-page h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.booking-page p {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 1.5em;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.booking-form button {
+    align-self: flex-start;
+}
+
+.back-btn {
+    background-color: #06a;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+.back-btn:hover {
+    background-color: #aaaaaa;
 }
