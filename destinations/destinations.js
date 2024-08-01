@@ -104,9 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
     set(dbRef,{
       ...bookingDetails,
     })
-  }
-then((result) => {
+  
+  .then((result) => {
     console.log("Booking saved successfully");
-  }).catch((err) => {
-    console.error("Error saving booking");
+  })
+  .catch((error) => {
+    console.error("Error saving booking", error);
   });
+}
