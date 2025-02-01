@@ -44,13 +44,6 @@ section h2 {
   margin-bottom: 20px;
 }
 
-footer {
-  padding: 10px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 20px;
-}
-
 a {
   color: #e8491d;
   text-decoration: none;
@@ -88,28 +81,22 @@ a:hover {
   margin: 16px;
 }
 
-.hero-about img {
-  max-width: 100%;
-  width: 85%;
-  margin: auto;
-  object-fit: cover;
-  display: block;
-}
-
-.hero {
+.hero-about {
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  position: relative;
 }
 
-.hero img {
-  max-width: 100%;
-  width: 85%;
-  margin: auto;
+.hero-about video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  margin-top: 1cm;
 }
 
 .hero-content {
@@ -155,19 +142,6 @@ footer {
   text-align: center;
 }
 
-.Kim h1 {
-  font-size: 30px;
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-  color: white;
-}
-
-h1 {
-  font-size: 30px;
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +159,7 @@ h1 {
   vertical-align: middle;
 }
 
-img {
+img, video {
   max-width: 100%;
   height: auto;
 }
@@ -238,7 +212,6 @@ img {
   margin-right: 0;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
   .reject, .reject2 {
     width: 32%;
@@ -249,7 +222,6 @@ img {
   .reject, .reject2 {
     width: 48%;
   }
-
   .navlinks {
     justify-content: space-around;
   }
@@ -259,20 +231,16 @@ img {
   .reject, .reject2 {
     width: 100%;
   }
-
   .navlinks {
     flex-direction: column;
     align-items: center;
   }
-
   .hero-content {
     font-size: 20px;
   }
-
   .hero-content h1 {
     font-size: 25px;
   }
-
   .hero-content p {
     font-size: 18px;
   }

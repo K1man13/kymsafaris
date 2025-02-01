@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="footer.css" />
     <link rel="icon" href="kym.jpg" type="image/png">
-    <link rel="stylesheet" href="footer.css">
     <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <script type="module" src="auth.js"></script>
     <script>
       /* paste this line in verbatim */
       window.formbutton =
@@ -45,6 +45,17 @@
           },
         },
       });
+
+      // JavaScript for handling search functionality
+      function performSearch() {
+        const query = document.getElementById('searchQuery').value.trim();
+        if (query) {
+          // Redirect to the search results page with the query
+          window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+        } else {
+          alert('Please enter a destination to search.');
+        }
+      }
     </script>
   </head>
   <body>
@@ -52,7 +63,7 @@
       <h1 class="logo">
         <img src="kym.jpg" alt="" width="50" height="50" />
       </h1>
-        <div class="navlinks">
+      <div class="navlinks">
         <a href="./index.html">Home</a>
         <a href="./about.html">About</a>
         <a href="services.html">Services</a>
@@ -61,23 +72,40 @@
         <a href="signup.html">Sign-Up</a>
       </div>
     </section>
+
     <section class="hero">
-      <img src="Tourism-Africa.jpg" alt="" />
+      <video autoplay loop muted class="hero-video">
+        <source src="134765-760133537_small.mp4" type="video/mp4" />
+        <source src="134765-760133537_small.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+
       <div class="hero-content">
         <h1>Welcome to Kym Safaris for the best tours and travels.</h1>
         <p>For The Best Experiences Ever.</p>
-        <button>Call Us</button>
       </div>
     </section>
 
+    <!-- Search Bar Section -->
     <section class="search">
-      <input type="search" placeholder="Search Places" name="" id="" />
-      <button>Search Places</button>
+      <input type="search" id="searchQuery" placeholder="Search Places" />
+      <button type="button" onclick="performSearch()">Search Places</button>
     </section>
+    
+    <script>
+      function performSearch() {
+        const searchQuery = document.getElementById('searchQuery').value.trim();
+        if (searchQuery) {
+          // Redirect to destinations.html with the query appended in the URL
+          window.location.href = `destinations/destinations.html?q=${encodeURIComponent(searchQuery)}`;
+        } else {
+          alert('Please enter a search term.');
+        }
+      }
+    </script>
     <section class="destination">
       <h1>Top Destination</h1>
       <hr>
-
       <div class="row">
         <div class="column">
           <img src="view1.jpeg" alt="" />
@@ -93,10 +121,12 @@
         </div>
       </div>
     </section>
+
     <header>
       <h1>Explore Top Destinations</h1>
       <hr>
     </header>
+
     <main>
       <section class="booking-cards">
         <article class="card">
@@ -112,10 +142,7 @@
           <img src="Maasai mara.png" alt="Destination 2" />
           <div class="card-content">
             <h2>Maasai Mara</h2>
-            <p>
-              A stunning kaleidoscope of wild and rugged landscapes, warm and
-              welcoming people.
-            </p>
+            <p>A stunning kaleidoscope of wild and rugged landscapes, warm and welcoming people.</p>
             <p class="price">$1500</p>
             <button>Book Now</button>
           </div>
@@ -124,10 +151,7 @@
           <img src="lake nakure.png" alt="Destination 3" />
           <div class="card-content">
             <h2>Lake Nakuru</h2>
-            <p>
-              One of the Rift Valley lakes, located at an elevation of 1,754 m
-              (5,755 ft) above sea level.
-            </p>
+            <p>One of the Rift Valley lakes, located at an elevation of 1,754 m (5,755 ft) above sea level.</p>
             <p class="price">$1300</p>
             <button>Book Now</button>
           </div>
@@ -136,27 +160,23 @@
           <img src="rome.png" alt="Destination 4" />
           <div class="card-content">
             <h2>Rome, Italy</h2>
-            <p>
-              Immerse yourself in ancient history and visit the Colosseum,
-              Vatican City, and more.
-            </p>
+            <p>Immerse yourself in ancient history and visit the Colosseum, Vatican City, and more.</p>
             <p class="price">$1100</p>
             <button>Book Now</button>
           </div>
         </article>
       </section>
     </main>
+
+    <footer>
+      <hr>
+      <section class="footer-section">
+        <div class="footer-1">
+          <h1 class="logo">KYM SAFARIS</h1>
+          <h3>Celebrate wanderlust in lands where each step narrates new adventures.</h3>
+        </div>
+      </section>
+      <h4>&copy; Kym Safaris</h4>
+    </footer>
   </body>
-  <footer>
-    <hr>
-    <secction class="footer-section">
-      <div class="footer-1">
-        <h1 class="logo">KYM SAFARIS</h1>
-        <h3>Celebrate wanderlust in lands where each step narrates new adventures.</h3>
-        <span></span>
-      </div>
-</secction>
-  <h4>&copy;kym_safaris</h4>
-</secction>
-</footer>
 </html>

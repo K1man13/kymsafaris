@@ -1,4 +1,3 @@
-
 let globalPlaceName = "";
 let globalPlaceDescription = "";
 
@@ -34,7 +33,7 @@ function openBookingPage(placeName, placeDescription) {
             </select>
             <label for="additional">Additional Requests:</label>
             <textarea id="additional" name="additional"></textarea>
-            <button type="submit" class="intaSendPayButton">Confirm Booking</button>
+            <button type="submit" class="pesapalPayButton">Confirm Booking</button>
         </form>
         <button class="btn back-btn">Back</button>
     `;
@@ -65,49 +64,78 @@ function handleBookingFormSubmit(event) {
         placeDescription: globalPlaceDescription,
     };
 
-    // Proceed to IntaSend Payment
-    triggerIntaSendPayment(bookingDetails);
+    // Proceed to Pesapal Payment
+    triggerPesapalPayment(bookingDetails);
 }
 
-function triggerIntaSendPayment(bookingDetails) {
-    const paymentButton = document.querySelector(".intaSendPayButton");
+function triggerPesapalPayment(bookingDetails) {
+    const paymentButton = document.querySelector(".pesapalPayButton");
 
     if (!paymentButton) {
-        console.error("IntaSend payment button not found");
+        console.error("Pesapal payment button not found");
         return;
     }
 
-    // Initialize IntaSend
-    const intasend = new window.IntaSend({
-        publicAPIKey: "ISPubKey_live_ec7a14b4-5066-4255-9bf3-76e4347ed974",
-        live: false, // set to true when going live
-    });
+    // Calculate the amount based on booking details
+    const amount = calculateBookingAmount(bookingDetails);
 
-    // Attach event listeners
-    intasend.on("COMPLETE", (results) => {
-        console.log("Payment successful", results);
-        saveBookingToFirebase(bookingDetails); // Save booking details to Firebase database
-        // Handle successful payment (e.g., save booking details to your database)
-    });
-    intasend.on("FAILED", (results) => {
-        console.log("Payment failed", results);
-        // Handle payment failure
-    });
-    intasend.on("IN-PROGRESS", (results) => {
-        console.log("Payment in progress", results);
-    });
+    // Initialize Pesapal Payment
+    const paymentData = {
+        amount: amount,
+        currency: "KES", // You can change this if needed
+        description: `Booking for ${globalPlaceName}`,
+        email: "user@example.com", // Replace with the user's email if available
+        phoneNumber: "0722002000", // Replace with the user's phone number if available
+        referenceNumber: "ref123456", // This should be a unique reference ID for the transaction
+        callbackUrl: "https://yourwebsite.com/payment-callback", // Pesapal will send the payment response here
+    };
 
-    // Update the button attributes
-    paymentButton.dataset.amount = calculateBookingAmount(bookingDetails); // Replace with actual amount based on bookingDetails
-    paymentButton.dataset.currency = "KES";
+    // Submit the payment request to Pesapal (this is usually done on the server side, but for demonstration purposes, we are directly sending the request)
+    makePesapalPaymentRequest(paymentData);
+}
 
-    // Simulate button click
-    paymentButton.click();
+function makePesapalPaymentRequest(paymentData) {
+    // The Pesapal API request to initiate payment (this should ideally be done from the server side)
+    // Example: You will need your Pesapal Consumer Key and Consumer Secret here
+    const pesapalConsumerKey = "vI4EkkrEk+4zh1CptdGwp5kZeVnPoTTh";
+    const pesapalConsumerSecret = "gVmuftPZNDRxFpIppfk/F4+qBD8=";
+    const pesapalPaymentUrl = "https://store.pesapal.com/kymsafaris";
+
+    // Create the payment request
+    const paymentRequest = {
+        amount: paymentData.amount,
+        currency: paymentData.currency,
+        description: paymentData.description,
+        email: paymentData.email,
+        phoneNumber: paymentData.phoneNumber,
+        referenceNumber: paymentData.referenceNumber,
+        callbackUrl: paymentData.callbackUrl,
+    };
+
+    // Use a method to send this request to your server (using Fetch API, Axios, etc.) and handle the response.
+    fetch(pesapalPaymentUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Basic ${btoa(pesapalConsumerKey + ":" + pesapalConsumerSecret)}`
+        },
+        body: JSON.stringify(paymentRequest),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Redirect to the Pesapal payment page
+        if (data.paymentUrl) {
+            window.location.href = data.paymentUrl; // Redirect to Pesapal for payment
+        }
+    })
+    .catch(error => {
+        console.error("Error initiating Pesapal payment:", error);
+    });
 }
 
 function calculateBookingAmount(bookingDetails) {
-    const basePrice = 2000;
-    const mealPrice = bookingDetails.meals === "yes" ? 500 : 0;
+    const basePrice = 2000; // Example base price per person per day
+    const mealPrice = bookingDetails.meals === "yes" ? 500 : 0; // Example meal cost
     return (basePrice + mealPrice) * bookingDetails.visitors * bookingDetails.days;
 }
 
@@ -118,8 +146,8 @@ function saveBookingToFirebase(bookingDetails) {
         const userId = user.uid;
         const userEmail = user.email;
 
-        const dbRef = ref(database, "bookings/" + userId);
-        set(dbRef, {
+        const dbRef = firebase.database().ref("bookings/" + userId);
+        dbRef.set({
             userEmail,
             userId,
             ...bookingDetails,
@@ -127,11 +155,14 @@ function saveBookingToFirebase(bookingDetails) {
         })
         .then(() => {
             console.log("Booking saved successfully");
+            alert("Your booking has been saved successfully.");
         })
         .catch((error) => {
             console.error("Error saving booking:", error);
+            alert("Error saving booking.");
         });
     } else {
         console.error("User not authenticated");
+        alert("You must be logged in to complete the booking.");
     }
 }

@@ -1,156 +1,173 @@
-
-.navlinks > a {
-  color: white;
-  text-decoration: none;
-  margin: 16px;}
-
-.navigation {
-  width: 70%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-
-}body {
+/* Global Styles */
+body {
   background-color: #060b1f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
+/* Navigation */
 .navigation {
   width: 70%;
   margin: auto;
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-between;
-  flex: auto;
+  padding: 20px 0;
 }
 
 .logo {
-  width: 50;
-  height: 50;
+  width: 50px;
+  height: 50px;
 }
 
 .navlinks {
-  color: white;
+  display: flex;
+  gap: 16px;
 }
 
 .navlinks > a {
   color: white;
   text-decoration: none;
-  margin: 16px;
+  margin: 0 16px;
+  font-size: 18px;
 }
+
+.navlinks > a:hover {
+  color: #850885;
+}
+
+/* Hero Section */
 .hero {
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
-.hero img {
-  max-width: 100%;
-  width: 85%;
-  margin: auto;
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  margin-top: 1cm;
 }
+
 .hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: black;
+  color: white;
   font-size: 70px;
-  font-family: Georgia, "Times New Roman", Times, serif;
 }
+
 .hero-content h1 {
-  font-size: 35px;
-  margin: 0%;
+  font-size: 40px;
+  margin: 0;
 }
+
 .hero-content p {
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
-  color: rgb(222, 231, 232);
+  color: rgb(10, 10, 10);
 }
+
 .hero-content button {
-  margin: 8px;
-  font-size: 15px;
-  padding: 12px, 24px;
-  border-radius: 9%;
-  color: white;
   background-color: #850885;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 9999px;
 }
+
 .hero-content button:hover {
   background-color: #a52;
 }
-footer {
-  position: relative;
-  bottom: 0.5%;
 
-  color: white;
-  font-size: 10px;
-  text-align: center;
-}
+/* Search Section */
 .search {
-  margin: auto;
+  margin: 20px auto;
   width: 80%;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
+
 .search > input {
   width: 80%;
   padding: 10px;
   border-radius: 9999px;
+  font-size: 16px;
 }
+
 .search > button {
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 9999px;
   background-color: #850885;
   font-size: 15px;
   border: none;
   color: white;
   cursor: pointer;
+  margin-left: 10px;
 }
+
+.search > button:hover {
+  background-color: #a52;
+}
+
+/* Destinations Section */
 .destination {
   width: 70%;
-  margin: auto;
-  color: white;
+  margin: 40px auto;
 }
+
 h1 {
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-
+  margin-bottom: 20px;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  gap: 4px;
 }
+
 .column {
-  flex: auto;
+  flex: 1;
   max-width: 25%;
-  padding: 0 4px;
+  padding: 4px;
 }
+
 .column > img {
-  margin-top: 8px;
   width: 100%;
   vertical-align: middle;
+  border-radius: 10px;
+  margin-top: 10px;
 }
+
+/* Header for Booking Section */
 header {
-  background-color:#060b1f;
+  background-color: #060b1f;
   color: white;
   text-align: center;
-  padding: 0.5px;
+  padding: 0.5rem;
   margin-top: 50px;
 }
 
-/* Main content styles */
-main {
-  padding: 2rem;
+header h1 {
+  font-size: 30px;
 }
 
-/* Booking cards section */
+/* Booking Cards Section */
 .booking-cards {
   width: 70%;
   display: grid;
@@ -160,7 +177,7 @@ main {
   margin-top: 50px;
 }
 
-/* Individual card styles */
+/* Individual Card Styles */
 .card {
   background-color: white;
   border: 1px solid #ddd;
@@ -171,15 +188,20 @@ main {
 
 .card > img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image covers the entire space */
+  display: block;
 }
+
 
 .card-content {
   padding: 1rem;
+  text-align: center;
 }
 
 .card-content h2 {
   margin: 0 0 0.5rem 0;
+  font-size: 24px;
 }
 
 .card-content > p {
@@ -192,12 +214,8 @@ main {
   font-weight: bold;
   color: #4CAF50;
 }
-.cards-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.card-content > button{
+
+.card-content > button {
   margin: 8px 0;
   padding: 12px 24px;
   font-size: 16px;
@@ -207,6 +225,21 @@ main {
   cursor: pointer;
   border-radius: 9999px;
 }
-.card-content > button:hover{
+
+.card-content > button:hover {
   background-color: #a52;
+}
+
+/* Footer Section */
+footer {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer hr {
+  border: 1px solid #ddd;
+  width: 90%;
+  margin: 20px auto;
 }
